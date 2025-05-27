@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY LINKS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 3px;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .link-button {
+            background: linear-gradient(45deg, #333333, #555555);
+            border: none;
+            padding: 15px 25px;
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+
+        .link-button:hover {
+            background: linear-gradient(45deg, #555555, #777777);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        }
+
+        .special-button {
+            background: linear-gradient(45deg, #4a4a4a, #666666);
+        }
+
+        .special-button:hover {
+            background: linear-gradient(45deg, #666666, #888888);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: -10px;
+        }
+
+        .close:hover {
+            color: #fff;
+        }
+
+        .modal h2 {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .modal p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .link-button {
+                font-size: 1rem;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>MY LINKS</h1>
+    
+    <div class="links-container">
+        <a href="https://roblox.tg/users/398440044/profile" class="link-button" target="_blank">
+            🎮 Play Roblox with me - Add me on Roblox to play with me
+        </a>
+        
+        <a href="https://maxime32231.github.io/json-maker-by-maxime/" class="link-button" target="_blank">
+            📋 Stash and loadout JSON maker
+        </a>
+        
+        <button class="link-button special-button" onclick="showDonateModal()">
+            💰 Donate me
+        </button>
+        
+        <button class="link-button special-button" onclick="showBrawlStarsModal()">
+            ⭐ Brawl Stars
+        </button>
+        
+        <a href="https://ac-pfp-maker-by-maxime.vercel.app/" class="link-button" target="_blank">
+            🖼️ AC Profile Picture Maker
+        </a>
+    </div>
+
+    <!-- Donate Modal -->
+    <div id="donateModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDonateModal()">&times;</span>
+            <h2>Donate</h2>
+            <p>PayPal down rn</p>
+        </div>
+    </div>
+
+    <!-- Brawl Stars Modal -->
+    <div id="brawlStarsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBrawlStarsModal()">&times;</span>
+            <h2>Brawl Stars</h2>
+            <p>Supercell ID: maxime32231</p>
+        </div>
+    </div>
+
+    <script>
+        function showDonateModal() {
+            document.getElementById('donateModal').style.display = 'block';
+        }
+
+        function closeDonateModal() {
+            document.getElementById('donateModal').style.display = 'none';
+        }
+
+        function showBrawlStarsModal() {
+            document.getElementById('brawlStarsModal').style.display = 'block';
+        }
+
+        function closeBrawlStarsModal() {
+            document.getElementById('brawlStarsModal').style.display = 'none';
+        }
+
+        // Close modals when clicking outside of them
+        window.onclick = function(event) {
+            const donateModal = document.getElementById('donateModal');
+            const brawlStarsModal = document.getElementById('brawlStarsModal');
+            
+            if (event.target === donateModal) {
+                donateModal.style.display = 'none';
+            }
+            if (event.target === brawlStarsModal) {
+                brawlStarsModal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
